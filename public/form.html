@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Séances de Sport</title>
+    <link href="form.css" rel="stylesheet">
+  </head>
+
+  <body >
+    <div id="all">
+    <h1 class="h3 mb-3 font-weight-normal">Carnet de Bord Sport</br>Q.Roussel</h1>
+    <div id="center">
+      <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSc8AndmUwnMMP2XHsPpnRdoXYZj3i7iHz42Q0NvU_9qio2bZg/formResponse" target="_self" method="POST" id="mG61Hd" class="form-support">
+        <div id="TS">
+          <label class="mandatory">Activité Sportif :</label></br>
+          <div id="Radio">
+            <input type="radio" id="UWH" name="entry.1539492745" value="Hockey Subaquatique"> 🤿 UWH</input></br>
+            <input type="radio" id="NEP" name="entry.1539492745" value="Nage en piscine"> 🏊 Nage en piscine</input></br>
+            <input type="radio" id="NEV" name="entry.1539492745" value="Nage en eau vive"> 🌊 Nage en eau vive</input></br>
+            <input type="radio" id="CAP" name="entry.1539492745" value="Course à pied"> 🏃 Course à pied</input></br>
+            <input type="radio" id="MUSC" name="entry.1539492745" value="Musculation"> 🏋️Musculation</input></br>
+            <input type="radio" id="Other" name="entry.1539492745" value=""> ❓ Autre :</input>
+            <input type="text" id="OtherText" onclick="checkOther()"></input></br>
+          </div>
+          <p class="alert" id="alertTS" style="visibility :hidden"><b>Question Obligatoire</b></p>
+        </div>
+        <div id="P2">
+          <label class="sport" id="sport">XXX</label>
+          <label class="mandatory" style="margin-top: 10%;">Contenu :</label>
+          <input type="text" id="CONTENT" name="entry.323144819"></input>
+          <p class="alert" id="alertCO" style="visibility : hidden"><b>Question Obligatoire</b></p>
+          <label class="mandatory">Durée :</label>
+          <input type="text" id="TIME" name="entry.250479262"></input>
+          <p class="alert" id="alertTI" style="visibility : hidden"><b>Question Obligatoire</b></p>
+          <div><label class="facu">Info Complementaire :</label></div>
+          <input type="text" id="MOREINFO" name="entry.1863458359"></input>
+        </div>
+        <div id="P3">
+          <label class="sport" id="sport2">XXX</label>
+          <label class="mandatory" style="margin-top: 10%;">Ressentis :</label></br>
+          <div id="radios">
+            <span>1</span>
+            <input  id="res1" name="entry.1055422217" type="radio" value="1"/>
+            <input  id="res2" name="entry.1055422217" type="radio" value="2"/>
+            <input  id="res3" name="entry.1055422217" type="radio" value="3"/>
+            <input  id="res4" name="entry.1055422217" type="radio" value="4"/>
+            <input  id="res5" name="entry.1055422217" type="radio" value="5"/>
+            <input  id="res6" name="entry.1055422217" type="radio" value="6"/>
+            <input  id="res7" name="entry.1055422217" type="radio" value="7"/>
+            <input  id="res8" name="entry.1055422217" type="radio" value="8"/>
+            <input  id="res9" name="entry.1055422217" type="radio" value="9"/>
+            <input  id="res10" name="entry.1055422217" type="radio" value="10"/>
+            <span>10</span>
+          </div>
+          <p class="alert" id="alertRA" style="visibility : hidden"><b>Question Obligatoire</b></p>
+          <label class="facu">Commentaire :</label></br>
+          <input type="text" id="COMM" name="entry.1582140633"></input>
+        </div>
+        <div id="FINAL">
+          <h2>Vous êtes sur le point d'enregistrer votre séance</h2>
+          <button id="ENVOI" type="submit">💾 Enregistrer</button>
+        </div>
+      </form>
+      <div id="Nav">
+        <button id="grey" onclick="clickPrevious()">🏠 Accueil</button>
+        <button id="blue" onclick="MandCheckNext()">Suivant &#10140;</button>
+      </div>
+    </div>
+  </div>
+  <p id="copy">&copy; Submitted to Google Forms</p>
+  <script src="form.js"></script>
+  </body>
+</html>
