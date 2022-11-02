@@ -8,7 +8,7 @@ html{
     border-radius: 20px;
     position: absolute;
     width: 80%;
-    top : 5%;
+    top : 10%;
     left : 5%;
     right: 5%;
     background-color: whitesmoke;
@@ -90,7 +90,7 @@ h2{
 }
 
 #icon{
-    width: 84px;
+    width: 180px;
     position: relative;
     margin: auto;
     margin-top: 5%;
@@ -99,6 +99,6 @@ h2{
 }
 
 img{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
 }

@@ -1,0 +1,122 @@
+html{
+    width : 0;
+    height: 0;
+    z-index: -999;
+}
+
+#center {
+    padding: 15% 5% 5% 5%;
+    border-radius: 20px;
+    position: absolute;
+    width: 80%;
+    top : 5%;
+    left : 5%;
+    right: 5%;
+    background-color: whitesmoke;
+    box-shadow: 7px 7px 6px 2px #A9A9A9;
+}
+
+body{
+    font: 1em "Fira Sans", sans-serif;
+    background-color:#87CEFA;
+}
+
+h2{
+    text-align: center;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    padding-top: 2.5%;
+    padding-bottom: 1.5%;
+    top: 5%;
+    left : 5%;
+    width: 90%;
+    margin-block-start: 0;
+    z-index : 999;
+    background-color: #3a86ff;
+    color: white;
+    font-size: 2em;
+}
+
+#save {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    position: relative;
+    bottom: 10px;
+    width: 60%;
+    margin: auto;
+    margin-top: 5%;
+    padding: 5px 10px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #6c757d;
+    box-shadow: 0 5px #495057;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    border: none;
+}
+
+#save:active {
+    box-shadow: 0 0 #495057;
+}
+
+#content{
+    width: 90%;
+    text-align: center;
+    position: relative;
+    margin: auto;
+}
+
+#pincode{
+    margin: auto;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    border: none;
+    width: 60%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 125%;
+    background-color: whitesmoke;
+    outline: none;
+    letter-spacing: 0.25rem;
+    border-radius: 10px;
+}
+
+#pincode::placeholder{
+    font-weight: bold;
+    font-size: 135%;
+    letter-spacing: 0.2rem;
+}
+
+#Alert{
+    color: red;
+    font-size: small;
+    font-weight: bold;
+    margin: auto;
+    visibility: hidden;
+}
+
+/**-----------------Cookie-----------------**/
+
+  #container {
+    left: 0px;
+    top: -100px;
+    height: calc(100vh + 100px);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #animate{
+    margin: 0 auto;
+    width: 20px;
+    overflow: visible;
+    position: relative;
+  }
+  
+  #all{
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+  }
