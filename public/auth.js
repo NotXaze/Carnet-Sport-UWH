@@ -13,6 +13,7 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database()
 
+document.cookie=""
 var id=document.cookie
 
 document.getElementById("save").addEventListener("click", () => {
@@ -53,6 +54,7 @@ function setID(){
             }
             else{
                 document.cookie=pincode.value+ "; expires=Mon, 06 Oct 2100 00:00:00 GMT; path=/"
+                console.log(id.substring(id.length - 4))
                 window.location="index.html"
             }
         })

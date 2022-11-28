@@ -1,17 +1,15 @@
 html{
-    width : 0;
-    height: 0;
-    z-index: -999;
+    width : 100%;
+    height: 100%;
 }
 
 #center {
-    padding: 15% 5% 5% 5%;
+    padding: 0% 0% 5% 0%;
     border-radius: 20px;
-    position: absolute;
-    width: 80%;
+    position: relative;
+    width: 100%;
     top : 5%;
-    left : 5%;
-    right: 5%;
+    text-align: center;
     background-color: whitesmoke;
     box-shadow: 7px 7px 6px 2px #A9A9A9;
 }
@@ -19,22 +17,24 @@ html{
 body{
     font: 1em "Fira Sans", sans-serif;
     background-color:#87CEFA;
+    max-width: 545px;
+    width: auto;
+    margin: auto;
+    height: 100%;
 }
 
 h2{
     text-align: center;
     border-radius: 20px 20px 0 0;
-    position: absolute;
+    position: relative;
     padding-top: 2.5%;
     padding-bottom: 1.5%;
-    top: 5%;
-    left : 5%;
-    width: 90%;
+    width: 100%;
     margin-block-start: 0;
-    z-index : 999;
+    margin-bottom: 5%;
     background-color: #3a86ff;
     color: white;
-    font-size: 2em;
+    font-size: min(40px,8.5vw);
 }
 
 #save {
@@ -44,7 +44,6 @@ h2{
     position: relative;
     bottom: 10px;
     width: 60%;
-    margin: auto;
     margin-top: 5%;
     padding: 5px 10px;
     border-radius: 20px;
@@ -52,10 +51,11 @@ h2{
     background-color: #6c757d;
     box-shadow: 0 5px #495057;
     color: white;
-    font-size: 20px;
+    font-size: min(5vw,37px);
     font-weight: bold;
     outline: none;
     border: none;
+    min-width: 158px;
 }
 
 #save:active {
@@ -71,13 +71,13 @@ h2{
 
 #pincode{
     margin: auto;
-    margin-top: 2%;
+    margin-top: 6%;
     margin-bottom: 0%;
     border: none;
     width: 60%;
     text-align: center;
     font-weight: bold;
-    font-size: 125%;
+    font-size: min(10vw,75px);
     background-color: whitesmoke;
     outline: none;
     letter-spacing: 0.25rem;
@@ -86,26 +86,34 @@ h2{
 
 #pincode::placeholder{
     font-weight: bold;
-    font-size: 135%;
+    font-size: min(10vw,75px);
     letter-spacing: 0.2rem;
 }
 
 #Alert{
     color: red;
-    font-size: small;
+    font-size: 16px;
     font-weight: bold;
     margin: auto;
     visibility: hidden;
 }
 
+#textcookie{
+    font-size: 20px;
+}
+
+
+
 /**-----------------Cookie-----------------**/
 
-  #container {
-    left: 0px;
-    top: -100px;
+
+/*  #container {
+    width: 100%;
+    height: 100%;
     height: calc(100vh + 100px);
     overflow: hidden;
-    position: relative;
+    position: absolute;
+    z-index: 2;
   }
   
   #animate{
@@ -119,4 +127,6 @@ h2{
     overflow: hidden;
     width: 100%;
     position: fixed;
-  }
+  }*/
+
+  

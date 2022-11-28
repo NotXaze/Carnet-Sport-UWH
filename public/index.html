@@ -11,16 +11,57 @@
   </head>
 
   <body >
-    <h2 id="header">Carnet de Bord Sport de </h2>
+    <div id="Event">
+      <h1 id="Banderole"><a id="alink" style="text-decoration: none; color:white">XXX</a></h1>
+    </div>
     <div id="center">
-        <div id="Seance">
-            <a href="form.html"><button id="new">💾 Nouvelle Séance</button></a>
+      <h2 id="header">Carnet de Bord Sport de </h2>
+      <div id="Seance">
+        <a href="form.html" id="anew"><button id="new">💾 Nouvelle Séance</button></a>
+      </div>
+      <div id="icon">
+        <a href="https://docs.google.com/spreadsheets/d/1rcxVCzNP8HWlEE206lqyhbdbhZlyaG0FrOPpnmmOQo4/edit?usp=sharing" target="_blank" id="sheet"><img src="https://drive.google.com/uc?id=1Ym1YLfYV3RnfiavavYWOsmIm_1sh1fYy"/></a>
+        <a href="auth.html"><img src="https://drive.google.com/uc?id=1epwULgd3VoIEbP2c2WcLmXNEWOAZeAj8" /></a>
+        <a href="https://github.com/NotXaze/Carnet-Sport-UWH/" target="_blank"><img src="https://drive.google.com/uc?id=1pBtsQUBiZDA5D3NgfxQeDdhEajowt-Kx"/></a>
+      </div>
+    </div>
+
+    <div id="train">
+      <h2>Entrainements</h2>
+      <div id="autogen">
+        <button id="slot1">Seance 1</button>
+        <button id="slot2">Seance 2 </button>
+        <button id="slot3">Seance 3</button>
+      </div>
+      <div id="TNav">
+        <button id="TPrevious"><span style="display: inline-block; transform: scale(-1, 1);">&#10140;</span></button>
+        <button id="Add">Ajouter +</button>
+        <button id="TNext">&#10140;</button>
+      </div>
+    </div>
+
+
+
+    <div id="modal">
+      <div id="overlay"></div>
+      <div id="content">
+        <h2 id="header-top">Réglages Affichage Évenement</h2>
+        <div id="eventdiv">
+          <label class="facu">Date de début :</label></br>
+          <input type="date" id="beg" value="none"></input></br>
+          <label class="facu">Date de fin :</label></br>
+          <input type="date" id="end" value="none"></input></br>
+          <label class="mandatory">Nom de l'évenement :</label></br>
+          <input type="text" id="ename" value=" "></input></br>
+          <p class="alert" id="alertMod" style="visibility :hidden"><b>Info Obligatoire</b></p></br>
+          <label class="facu">Lien Document Annexe :</label></br>
+          <input type="text" id="link" value=" "></input>
         </div>
-        <div id="icon">
-            <a href="https://docs.google.com/spreadsheets/d/1rcxVCzNP8HWlEE206lqyhbdbhZlyaG0FrOPpnmmOQo4/edit?usp=sharing" target="_blank"><img src="https://drive.google.com/uc?id=1Ym1YLfYV3RnfiavavYWOsmIm_1sh1fYy"/></a>
-            <a href="auth.html"><img src="https://drive.google.com/uc?id=1epwULgd3VoIEbP2c2WcLmXNEWOAZeAj8" /></a>
-            <a href="https://github.com/NotXaze/Carnet-Sport-UWH/" target="_blank"><img src="https://drive.google.com/uc?id=1pBtsQUBiZDA5D3NgfxQeDdhEajowt-Kx"/></a>
+        <div id="Nav">
+          <button id="grey" >🏠 Accueil</button>
+          <button id="blue" >💾 Enregistrer</button>
         </div>
+      </div>
     </div>
   <script type="module" src="index.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
