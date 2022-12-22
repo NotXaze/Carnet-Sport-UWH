@@ -31,6 +31,9 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
   if (id==""){
     window.location="auth.html"
   }
+
+  /*---------------COACH---------------*/
+  
   console.log(snapshot.val()=="Coach")
   if (snapshot.val()=="Coach"){
     header.innerHTML="Espace Coach <img src='https://drive.google.com/uc?id=1UHOF43dw97Aw-O1LSbKUQwnVyfC2SXnq'/>"
@@ -42,14 +45,17 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
     var banderole=document.getElementById("Banderole")
     banderole.addEventListener("click", function(){
       openModal()
+      document.getElementById("trainingdiv").style.display="none"
+      document.getElementById("eventdiv").style.display="block"
+      document.getElementById("newTrain").style.display="none"
+      document.getElementById("header-top").innerHTML="Réglages Affichage Évenement"
+      document.getElementById("blue").style.display="block"
     })
     document.getElementById("blue").addEventListener("click", function(){
       var formBeg=document.getElementById("beg")
       var formEnd=document.getElementById("end")
       var formName=document.getElementById("ename")
       var formLink=document.getElementById("link")
-
-/**------------------------------------------------------------------------------------------------------- */
 
       var dateBeg=formBeg.value.slice(8,10)+"/"+document.getElementById("beg").value.slice(5,7)
       var dateEnd=formEnd.value.slice(8,10)+"/"+document.getElementById("end").value.slice(5,7)
@@ -91,12 +97,25 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
     })
     document.getElementById("Add").addEventListener("click",function(){
       database.ref("seance/count").once("value",function(snapshot3){
-        var lol=snapshot3.val()+1
-        var temp=window.prompt("nom de la seance","Séance "+lol)
-        if (temp.length>0){
-          database.ref("seance/"+lol+"/name").set(temp)
-          database.ref("seance/count").set(lol)
+        openModal()
+        document.getElementById("trainingdiv").style.display="none"
+        document.getElementById("eventdiv").style.display="none"
+        document.getElementById("newTrain").style.display="block"
+        document.getElementById("header-top").innerHTML="Nouvelle Séance"
+        document.getElementById("blue").style.display="block"
+
+        function savetrain(name,content){
+          database.ref("seance/count").once("value",function(snapshot3){
+            var temp=snapshot3.val()+1
+            database.ref("seance/"+temp+"/name").set(name)
+            database.ref("seance/count").set(temp)
+            database.ref("seance/"+temp+"/content").set(content)
+          })
         }
+
+        document.getElementById("blue").addEventListener("click",function(){
+          savetrain(document.getElementById("trainName").value,document.getElementById("trainContent").innerHTML)
+        })
       })
     })
   }
@@ -155,6 +174,16 @@ var Slot2=document.getElementById("slot2")
 var Slot3=document.getElementById("slot3")
 
 /* Init */
+
+function ContentTrain(temp,name){
+  document.getElementById("blue").style.display="none"
+  document.getElementById("header-top").innerHTML=name
+  document.getElementById("eventdiv").style.display="none"
+  database.ref("seance/"+temp+"/content").once("value",function(snap){
+    document.getElementById("trainingdiv").innerHTML=snap.val()
+  })
+}
+
 function Init(){
   database.ref("seance/count").once("value", function(snapshot){
     count=snapshot.val()-(3*stateTrain)
@@ -163,9 +192,13 @@ function Init(){
     Slot3.style.visibility="visible"
     database.ref(path1).once("value",function(snapshot2){
       Slot1.innerHTML=snapshot2.val()
+
       Slot1.addEventListener("click",function(){
         openModal()
-        document.getElementById("modal.default").style.display="none"
+        ContentTrain(count,snapshot2.val())
+        document.getElementById("trainingdiv").style.display="block"
+        document.getElementById("eventdiv").style.display="none"
+        document.getElementById("newTrain").style.display="none"
       })
     })
     var path2="seance/"+(count-1)+"/name"
@@ -173,6 +206,14 @@ function Init(){
       if (count-1>0){
         minSee=count-2
         Slot2.innerHTML=snapshot2.val()
+
+        Slot2.addEventListener("click",function(){
+          openModal()
+          ContentTrain(count-1,snapshot2.val())
+          document.getElementById("trainingdiv").style.display="block"
+          document.getElementById("eventdiv").style.display="none"
+          document.getElementById("newTrain").style.display="none"
+        })
       }
       else{
         minSee=count-1
@@ -184,6 +225,14 @@ function Init(){
       if (count-2>0){
         minSee=count-3
         Slot3.innerHTML=snapshot2.val()
+
+        Slot3.addEventListener("click",function(){
+          openModal()
+          document.getElementById("trainingdiv").style.display="block"
+          document.getElementById("eventdiv").style.display="none"
+          document.getElementById("newTrain").style.display="none"
+          ContentTrain(count-2,snapshot2.val())
+        })
       }
       else{
         Slot3.style.visibility="hidden"
@@ -193,6 +242,8 @@ function Init(){
   })
 }
 Init()
+
+/* ----------------Train---------------- */
 
 document.getElementById("TNext").addEventListener("click",function(){
   if (minSee>0){
@@ -216,3 +267,16 @@ document.getElementById("TPrevious").addEventListener("click",function(){
   }
 })
 
+/* ----------------Resp Height trainContent---------------- */
+
+function calcHeight(value) {
+  let numberOfLineBreaks = (value.match(/\n/g) || []).length;
+  // min-height + lines x line-height + padding + border
+  let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
+  return newHeight;
+}
+
+var trainContent = document.getElementById("trainContent")
+trainContent.addEventListener("keyup", () => {
+  trainContent.style.height = calcHeight(trainContent.value) + "px";
+});
