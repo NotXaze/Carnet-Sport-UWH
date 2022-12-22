@@ -51,6 +51,7 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
       document.getElementById("header-top").innerHTML="Réglages Affichage Évenement"
       document.getElementById("blue").style.display="block"
     })
+    document.getElementById("blue").replaceWith(document.getElementById("blue").cloneNode(true))
     document.getElementById("blue").addEventListener("click", function(){
       var formBeg=document.getElementById("beg")
       var formEnd=document.getElementById("end")
@@ -109,12 +110,14 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
             var temp=snapshot3.val()+1
             database.ref("seance/"+temp+"/name").set(name)
             database.ref("seance/count").set(temp)
-            database.ref("seance/"+temp+"/content").set(content)
+            database.ref("seance/"+temp+"/content").set(content.replace(/\n\r?/g, '<br />'))
+          window.location="index.html"
           })
         }
 
+        document.getElementById("blue").replaceWith(document.getElementById("blue").cloneNode(true))
         document.getElementById("blue").addEventListener("click",function(){
-          savetrain(document.getElementById("trainName").value,document.getElementById("trainContent").innerHTML)
+          savetrain(document.getElementById("trainName").value,document.getElementById("trainContent").value)
         })
       })
     })
@@ -136,6 +139,7 @@ function openModal(){
 
 function closeModal(){
   document.getElementById("modal").style.display="none"
+  window.location="index.html"
 }
 
 document.getElementById('grey').addEventListener("click", function(){
@@ -245,12 +249,19 @@ Init()
 
 /* ----------------Train---------------- */
 
+database.ref("seance/count").once("value",function(snapshot){
+  if (snapshot.val()<4){
+    document.getElementById("TNext").style.visibility="hidden"
+  }
+})
+
 document.getElementById("TNext").addEventListener("click",function(){
   if (minSee>0){
     stateTrain++
     Init()
     document.getElementById("TPrevious").style.visibility="visible"
-    if (minSee<4){
+    console.log(count%3!=0)
+    if (count==maxSee){
       document.getElementById("TNext").style.visibility="hidden"
     }
   }
@@ -279,4 +290,4 @@ function calcHeight(value) {
 var trainContent = document.getElementById("trainContent")
 trainContent.addEventListener("keyup", () => {
   trainContent.style.height = calcHeight(trainContent.value) + "px";
-});
+})

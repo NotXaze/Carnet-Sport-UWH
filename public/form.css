@@ -12,15 +12,14 @@ body{
 }
 
 #center {
-    padding: 0% 0% 0% 0%;
+    padding: 0% 0% 5% 0%;
     border-radius: 20px;
     position: relative;
-    width: 100%;
-    max-width: 545px;
-    height: 80%;
-    min-height: 520px;
-    top: 5%;
+    width: 85%;
+    height: 85%;
+    min-height: 540px;
     margin: auto;
+    top: 20px;
     text-align: center;
     background-color: whitesmoke;
     box-shadow: 7px 7px 6px 2px #A9A9A9;
