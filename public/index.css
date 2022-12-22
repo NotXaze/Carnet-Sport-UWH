@@ -357,3 +357,9 @@ label {
 #newTrain{
     display: none;
 }
+
+#trainingdiv{
+    width: 80%;
+    margin: auto;
+    text-align: left;
+}

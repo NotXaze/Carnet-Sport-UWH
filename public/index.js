@@ -139,7 +139,6 @@ function openModal(){
 
 function closeModal(){
   document.getElementById("modal").style.display="none"
-  window.location="index.html"
 }
 
 document.getElementById('grey').addEventListener("click", function(){
