@@ -19,10 +19,26 @@ console.log(id)
 var user="Someone"
 
 var header=document.getElementById("header")
+var ClockStates=["🕐","🕑","🕒","🕓","🕔","🕕","🕖","🕗","🕘","🕙","🕚","🕛"]
+var ActClockState=0
+
+function AnimClock(){
+  document.getElementById("alink").innerHTML=ClockStates[ActClockState]+document.getElementById("alink").innerHTML.slice(2)
+  if (ActClockState==11)
+    ActClockState=0
+  else{
+    ActClockState++
+  }
+}
 
 database.ref("event/name").once("value", function(snapshot){
   var banderole=document.getElementById("alink")
   banderole.innerHTML=snapshot.val()
+
+  if (banderole.innerHTML[0] == "#"){
+    AnimClock()
+    setInterval(AnimClock,350)
+  }
 })
 
 database.ref("user/" + id + "/name").once("value", function(snapshot){
@@ -76,15 +92,15 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
       }
       if (ename.length>1){
         if (dateBeg.length>2 && dateEnd.length>2){
-          var temp="🕒 "+dateBeg+"-"+dateEnd+" "+ename
+          var temp="# "+dateBeg+"-"+dateEnd+" "+ename
           save(temp)
         }
         else if(dateBeg.length>2){
-          var temp="🕒 "+dateBeg +" "+ename 
+          var temp="# "+dateBeg +" "+ename 
           save(temp)
         }
         else if(dateEnd.length>2){
-          var temp="🕒 "+dateEnd +" "+ename 
+          var temp="# "+dateEnd +" "+ename 
           save(temp)
         }
         else{
@@ -125,6 +141,9 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
   else{
     database.ref("event/link").once("value", function(snapshot){
       var banderole=document.getElementById("alink")
+      if (snapshot.val().length>4){
+        document.getElementById("alink").innerHTML=document.getElementById("alink").innerHTML+"🔗"
+      }
       banderole.addEventListener("click",function(){
         window.location=snapshot.val()
       })
