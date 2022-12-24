@@ -23,7 +23,7 @@
             <input type="radio" id="CAP" name="temp" value="Course à pied"> 🏃 Course à pied</input></br>
             <input type="radio" id="MUSC" name="temp" value="Musculation"> 🏋️Musculation</input></br>
             <input type="radio" id="Other" name="temp" value=""> ❓ Autre :</input>
-            <input type="text" id="OtherText" onclick="checkOther()"></input></br>
+            <textarea id="OtherText" onclick="checkOther()"></textarea></br>
           </div>
           <p class="alert" id="alertTS" style="visibility :hidden"><b>Question Obligatoire</b></p>
         </div>
@@ -66,8 +66,8 @@
         </div>
       </form>
       <div id="Nav">
-        <button id="grey" onclick="clickPrevious()">🏠 Accueil</button>
-        <button id="blue" onclick="MandCheckNext()">Suivant &#10140;</button>
+        <button id="grey" >🏠 Accueil</button>
+        <button id="blue" >Suivant &#10140;</button>
       </div>
   </div>
   <p id="copy">&copy; Submitted to Google Forms</p>

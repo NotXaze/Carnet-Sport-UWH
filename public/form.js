@@ -70,6 +70,7 @@ function clickNext(){
     }
 }
 
+document.getElementById("grey").addEventListener("click",clickPrevious)
 function clickPrevious(){
     if (state>-1){
         state--
@@ -104,6 +105,7 @@ function checkOther(){
     document.getElementById("Other").checked=true
 }
 
+document.getElementById("blue").addEventListener("click",MandCheckNext)
 function MandCheckNext(){
     if (state==2){
         if(!(document.getElementById("res1").checked || document.getElementById("res2").checked || document.getElementById("res3").checked || document.getElementById("res4").checked || document.getElementById("res5").checked || document.getElementById("res6").checked || document.getElementById("res7").checked || document.getElementById("res8").checked || document.getElementById("res9").checked || document.getElementById("res10").checked)){
@@ -145,3 +147,11 @@ function MandCheckNext(){
         }
     }
 }
+
+var OtherText=document.getElementById("OtherText")
+OtherText.addEventListener('input', function(){
+    var ValOtherText=OtherText.value
+    if (ValOtherText[ValOtherText.length-1]=="\n"){
+        OtherText.value=ValOtherText.slice(0,ValOtherText.length-1)
+    }
+})

@@ -133,6 +133,8 @@ form{
     background-color : whitesmoke;
     border-bottom: 1px dashed #a8a8a8 ;
     width: 40%;
+    height: 13.5px;
+    resize: none;
 }
 
 input:focus, textarea:focus{
