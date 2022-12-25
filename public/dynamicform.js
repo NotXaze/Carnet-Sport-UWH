@@ -18,6 +18,9 @@ var header=document.getElementById("head")
 
 database.ref("user/" + id + "/name").once("value", function(snapshot){
   header.innerHTML=header.innerHTML + snapshot.val()
+  if (id==""){
+    window.location="auth.html"
+  }
 })
 
 database.ref("user/"+id+"/form/action").once("value", function(snap){

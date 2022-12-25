@@ -16,13 +16,23 @@ var database = firebase.database()
 document.cookie=""
 var id=document.cookie
 
-document.getElementById("save").addEventListener("click", () => {
+function Save(){
     if (document.getElementById("checkCookie").checked){
         setID()
     }
     else{
         document.getElementById("Alert").style.visibility="visible"
         document.getElementById("Alert").innerHTML="Les cookies sont nécésaires au bon fonctionnement du site"
+    }
+}
+
+document.getElementById("save").addEventListener("click", function(){
+    Save()
+})
+
+document.getElementById("pincode").addEventListener("keydown",function(event){
+    if (event.keyCode==13){
+        Save()
     }
 })
 
