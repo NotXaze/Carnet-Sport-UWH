@@ -13,51 +13,49 @@
   <body >
     <div id="center">
       <h1 id="head">Carnet de Bord Sport</br></h1>
-      <form action="temp" target="_self" method="POST" id="mG61Hd">
+      <form action="temp" method="POST" id="myForm">
         <div id="TS">
           <label class="mandatory">Activité Sportif :</label></br>
           <div id="Radio">
-            <input type="radio" id="UWH" name="temp" value="Hockey Subaquatique"> 🤿 UWH</input></br>
-            <input type="radio" id="NEP" name="temp" value="Nage en piscine"> 🏊 Nage en piscine</input></br>
-            <input type="radio" id="NEV" name="temp" value="Nage en eau vive"> 🌊 Nage en eau vive</input></br>
-            <input type="radio" id="CAP" name="temp" value="Course à pied"> 🏃 Course à pied</input></br>
-            <input type="radio" id="MUSC" name="temp" value="Musculation"> 🏋️Musculation</input></br>
-            <input type="radio" id="Other" name="temp" value=""> ❓ Autre :</input>
-            <textarea id="OtherText" onclick="checkOther()"></textarea></br>
+            <input type="radio" id="UWH" name="Sport" value="Hockey Subaquatique"> 🤿 UWH</input></br>
+            <input type="radio" id="NEP" name="Sport" value="Nage en piscine"> 🏊 Nage en piscine</input></br>
+            <input type="radio" id="NEV" name="Sport" value="Nage en eau vive"> 🌊 Nage en eau vive</input></br>
+            <input type="radio" id="CAP" name="Sport" value="Course à pied"> 🏃 Course à pied</input></br>
+            <input type="radio" id="MUSC" name="Sport" value="Musculation"> 🏋️Musculation</input></br>
+            <input type="radio" id="Other" name="Sport" value=""> ❓ Autre :</input>
+            <textarea id="OtherText" name="Sport" onclick="checkOther()"></textarea></br>
           </div>
           <p class="alert" id="alertTS" style="visibility :hidden"><b>Question Obligatoire</b></p>
         </div>
         <div id="P2">
           <label class="sport" id="sport">XXX</label></br>
           <label class="mandatory" style="margin-top: 24px;">Contenu :</label></br>
-          <input type="text" id="CONTENT" name="temp"></input></br>
+          <input type="text" id="CONTENT" name="Contenu"></input></br>
           <p class="alert" id="alertCO" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
           <label class="mandatory">Durée :</label></br>
-          <input type="text" id="TIME" name="temp"></input>
+          <input type="text" id="TIME" name="Duree"></input>
           <p class="alert" id="alertTI" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
           <div><label class="facu">Info Complementaire :</label></div></br>
-          <textarea type="text" id="MOREINFO" name="temp"></textarea></br>
+          <textarea type="text" id="MOREINFO" name="Autre Info"></textarea></br>
         </div>
         <div id="P3">
           <label class="sport" id="sport2">XXX</label></br>
           <label class="mandatory" style="margin-top: 24px;">Ressentis :</label></br>
           <div id="radios">
             <span>1</span>
-            <input  id="res1" name="temp" type="radio" value="1"/>
-            <input  id="res2" name="temp" type="radio" value="2"/>
-            <input  id="res3" name="temp" type="radio" value="3"/>
-            <input  id="res4" name="temp" type="radio" value="4"/>
-            <input  id="res5" name="temp" type="radio" value="5"/>
-            <input  id="res6" name="temp" type="radio" value="6"/>
-            <input  id="res7" name="temp" type="radio" value="7"/>
-            <input  id="res8" name="temp" type="radio" value="8"/>
-            <input  id="res9" name="temp" type="radio" value="9"/>
-            <input  id="res10" name="temp" type="radio" value="10"/>
+            <input  id="res1" name="Ressenti" type="radio" value="1"/>
+            <input  id="res2" name="Ressenti" type="radio" value="2"/>
+            <input  id="res3" name="Ressenti" type="radio" value="3"/>
+            <input  id="res4" name="Ressenti" type="radio" value="4"/>
+            <input  id="res5" name="Ressenti" type="radio" value="5"/>
+            <input  id="res6" name="Ressenti" type="radio" value="6"/>
+            <input  id="res7" name="Ressenti" type="radio" value="7"/>
+            <input  id="res8" name="Ressenti" type="radio" value="8"/>
+            <input  id="res9" name="Ressenti" type="radio" value="9"/>
+            <input  id="res10" name="Ressenti" type="radio" value="10"/>
             <span>10</span>
           </div></br>
           <p class="alert" id="alertRA" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
-          <label class="facu">Commentaire :</label></br></br>
-          <input type="text" id="COMM" name="temp"></input></br>
         </div>
         <div id="FINAL">
           <h2>Vous êtes sur le point d'enregistrer votre séance</h2>
