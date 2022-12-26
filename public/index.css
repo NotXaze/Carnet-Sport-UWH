@@ -363,3 +363,27 @@ label {
     margin: auto;
     text-align: left;
 }
+
+#notif{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    max-width: 545px;
+    height: 30px;
+    top: 10px;
+    text-align: center;
+    display: none;
+    opacity: 100%;
+}
+
+#textNotif{
+    width: 90%;
+    max-width: 490.5px;
+    background-color: #00A75F;
+    color: white;
+    border-radius: 6px;
+    font-size: 17.5px;
+    font-weight: bold;
+    margin-left: min(5%,27.25px);
+    margin-right: min(5%,27.25px);
+}
