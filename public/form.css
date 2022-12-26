@@ -6,8 +6,9 @@ html{
 body{
     font: 1em "Fira Sans", sans-serif;
     background-color:#87CEFA;
-    margin: 0px;
+    margin: auto;
     width: auto;
+    max-width: 545px;
     height: 100%;
 }
 
@@ -33,16 +34,7 @@ h1{
     padding: 4px;
     background-color: #3a86ff;
     color: white;
-    font-size: min(50px,8.5vw);
-}
-
-#copy{
-    text-align: center;
-    position : relative;
-    bottom : -10%;
-    width: 80%;
-    left : 10%;
-    color : #aaaaaa;
+    font-size: min(40px,8.5vw);
 }
 
 button{
@@ -159,6 +151,8 @@ label {
 
 #MOREINFO{
     margin-top: -0%;
+    resize: vertical;
+    max-height: 200px;
 }
 
 #Radio{
@@ -219,6 +213,10 @@ input[type='text'], textarea{
 .facu {
     background-color: #00A75F;
     box-shadow: 0 5px #00590D;
+}
+
+#P3 .facu{
+    margin-top: 15px;
 }
 
 .labelRadio{

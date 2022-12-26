@@ -155,3 +155,9 @@ OtherText.addEventListener('input', function(){
         OtherText.value=ValOtherText.slice(0,ValOtherText.length-1)
     }
 })
+
+document.getElementById("ENVOI").addEventListener("click",function(){
+    document.getElementById("ENVOI").style.display="none"
+    document.getElementById("alertSAVE").style.display="none"
+    document.getElementById("msgConf").innerHTML="🚧 Enregistrement en cours 🚧 </br> Veuillez patienter </br> Redirection en cours..."
+})

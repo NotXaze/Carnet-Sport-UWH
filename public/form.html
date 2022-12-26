@@ -35,8 +35,6 @@
           <label class="mandatory">Durée :</label></br>
           <input type="text" id="TIME" name="Duree"></input>
           <p class="alert" id="alertTI" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
-          <div><label class="facu">Info Complementaire :</label></div></br>
-          <textarea type="text" id="MOREINFO" name="Autre Info"></textarea></br>
         </div>
         <div id="P3">
           <label class="sport" id="sport2">XXX</label></br>
@@ -53,13 +51,15 @@
             <input  id="res8" name="Ressenti" type="radio" value="8"/>
             <input  id="res9" name="Ressenti" type="radio" value="9"/>
             <input  id="res10" name="Ressenti" type="radio" value="10"/>
-            <span>10</span>
+            <span>10</span></br>
+            <div><label class="facu">Info Complementaire :</label></div></br>
+            <textarea type="text" id="MOREINFO" name="Autre Info"></textarea></br>
           </div></br>
           <p class="alert" id="alertRA" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
         </div>
         <div id="FINAL">
-          <h2>Vous êtes sur le point d'enregistrer votre séance</h2>
-          <h2 style="color: red;">Cette action est définitive</h2>
+          <h2 id="msgConf">Vous êtes sur le point d'enregistrer votre séance</h2>
+          <h2 style="color: red;" id="alertSAVE">Cette action est définitive</h2>
           <button id="ENVOI" type="submit">💾 Enregistrer</button>
         </div>
       </form>
@@ -68,7 +68,6 @@
         <button id="blue" >Suivant &#10140;</button>
       </div>
   </div>
-  <p id="copy">&copy; Submitted to Google Forms</p>
   <script src="form.js"></script>
   <script type="module" src="dynamicform.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
