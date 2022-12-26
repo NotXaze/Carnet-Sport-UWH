@@ -19,7 +19,7 @@ console.log(id)
 var user="Someone"
 
 var header=document.getElementById("header")
-var ClockStates=["🕐","🕑","🕒","🕓","🕔","🕕","🕖","🕗","🕘","🕙","🕚","🕛"]
+var ClockStates=["🕐 ","🕑 ","🕒 ","🕓 ","🕔 ","🕕 ","🕖 ","🕗 ","🕘 ","🕙 ","🕚 ","🕛 "]
 var ActClockState=0
 
 function AnimClock(){
@@ -142,7 +142,7 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
     database.ref("event/link").once("value", function(snapshot){
       var banderole=document.getElementById("alink")
       if (snapshot.val().length>4){
-        document.getElementById("alink").innerHTML=document.getElementById("alink").innerHTML+"🔗"
+        document.getElementById("alink").innerHTML=document.getElementById("alink").innerHTML+" 🔗"
       }
       banderole.addEventListener("click",function(){
         window.location=snapshot.val()
@@ -309,3 +309,24 @@ var trainContent = document.getElementById("trainContent")
 trainContent.addEventListener("keyup", () => {
   trainContent.style.height = calcHeight(trainContent.value) + "px";
 })
+
+/* ----------------Notif Seance Sauvegardée---------------- */
+
+console.log(window.location.href.includes("GG"))
+
+function decrOpa(){
+  var elem=document.getElementById("notif")
+  elem.style.opacity=elem.style.opacity-0.01
+  console.log(elem.style.opacity)
+  if (elem.style.opacity<0){
+    elem.style.display="none"
+    clearInterval()
+    window.location="index.html"
+  }
+}
+
+if (window.location.href.includes("GG")){
+  document.getElementById("notif").style.display="block"
+  document.getElementById("notif").style.opacity="225%"
+  setInterval(decrOpa,25)
+}

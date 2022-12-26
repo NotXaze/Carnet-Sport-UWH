@@ -23,51 +23,24 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
   }
 })
 
-database.ref("user/"+id+"/form/action").once("value", function(snap){
-  document.getElementById("mG61Hd").action=snap.val()
-  console.log("action OK")
+database.ref("user/" + id + "/betterform").once("value", function(snapshot){
+  document.getElementById("myForm").action=snapshot.val()
+  console.log("FormAction OK")
 })
 
-database.ref("user/"+id+"/form/1").once("value", function(snap){
-  document.getElementById("UWH").name=snap.val()
-  document.getElementById("NEP").name=snap.val()
-  document.getElementById("NEV").name=snap.val()
-  document.getElementById("CAP").name=snap.val()
-  document.getElementById("MUSC").name=snap.val()
-  document.getElementById("Other").name=snap.val()
-  console.log("sport OK")
-})
-
-database.ref("user/"+id+"/form/2").once("value", function(snap){
-  document.getElementById("CONTENT").name=snap.val()
-  console.log("Contenus OK")
-})
-
-database.ref("user/"+id+"/form/3").once("value", function(snap){
-  document.getElementById("TIME").name=snap.val()
-  console.log("Durée OK")
-})
-
-database.ref("user/"+id+"/form/4").once("value", function(snap){
-  document.getElementById("MOREINFO").name=snap.val()
-  console.log("More Info OK")
-})
-
-database.ref("user/"+id+"/form/5").once("value", function(snap){
-  document.getElementById("res1").name=snap.val()
-  document.getElementById("res2").name=snap.val()
-  document.getElementById("res3").name=snap.val()
-  document.getElementById("res4").name=snap.val()
-  document.getElementById("res5").name=snap.val()
-  document.getElementById("res6").name=snap.val()
-  document.getElementById("res7").name=snap.val()
-  document.getElementById("res8").name=snap.val()
-  document.getElementById("res9").name=snap.val()
-  document.getElementById("res10").name=snap.val()
-  console.log("RES OK")
-})
-
-database.ref("user/"+id+"/form/6").once("value", function(snap){
-  document.getElementById("COMM").name=snap.val()
-  console.log("COMM OK")
-})
+window.addEventListener("DOMContentLoaded", function() {
+  const yourForm = document.getElementById("myForm");
+  yourForm.addEventListener("submit", function(e) { 
+    e.preventDefault(); 
+    const data = new FormData(yourForm); 
+    const action = e.target.action; 
+    fetch(action, { 
+      method: 'POST', 
+      body: data, 
+    }).then((response) => {
+      response.json();
+    }).then(() => {
+      window.location="index.html?GG"
+    })
+  })
+});

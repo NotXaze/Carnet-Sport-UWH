@@ -31,6 +31,7 @@ document.getElementById("save").addEventListener("click", function(){
 })
 
 document.getElementById("pincode").addEventListener("keydown",function(event){
+    console.log(event.keyCode)
     if (event.keyCode==13){
         Save()
     }
