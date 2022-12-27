@@ -21,11 +21,7 @@ database.ref("user/" + id + "/name").once("value", function(snapshot){
   if (id==""){
     window.location="auth.html"
   }
-})
-
-database.ref("user/" + id + "/betterform").once("value", function(snapshot){
-  document.getElementById("myForm").action=snapshot.val()
-  console.log("FormAction OK")
+  document.getElementById("SheetName").value=snapshot.val()
 })
 
 window.addEventListener("DOMContentLoaded", function() {
