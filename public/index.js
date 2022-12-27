@@ -37,7 +37,7 @@ database.ref("event/name").once("value", function(snapshot){
 
   if (banderole.innerHTML[0] == "#"){
     AnimClock()
-    setInterval(AnimClock,350)
+    setInterval(AnimClock,1000)
   }
 })
 

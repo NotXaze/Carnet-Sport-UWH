@@ -149,6 +149,16 @@ label {
     font-weight: bold;
 }
 
+#TIME{
+    resize: none;
+    height: 16px;
+}
+
+#CONTENT{
+    resize: vertical;
+    max-height: 125px;
+}
+
 #MOREINFO{
     margin-top: -0%;
     resize: vertical;
