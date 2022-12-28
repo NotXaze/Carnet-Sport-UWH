@@ -13,7 +13,7 @@
   <body >
     <div id="center">
       <h1 id="head">Carnet de Bord Sport</br></h1>
-      <form action="temp" method="POST" id="myForm">
+      <form action="https://script.google.com/macros/s/AKfycbzy9bYIHoO13cGUmJF16GH-MVTx-q_wbZkhx5A9UFhNaZ46OSio-MfnF5xRdX7AEYhE/exec" method="POST" id="myForm">
         <div id="TS">
           <label class="mandatory">Activité Sportif :</label></br>
           <div id="Radio">
@@ -30,10 +30,10 @@
         <div id="P2">
           <label class="sport" id="sport">XXX</label></br>
           <label class="mandatory" style="margin-top: 24px;">Contenu :</label></br>
-          <input type="text" id="CONTENT" name="Contenu"></input></br>
+          <textarea id="CONTENT" name="Contenu"></textarea></br>
           <p class="alert" id="alertCO" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
           <label class="mandatory">Durée :</label></br>
-          <input type="text" id="TIME" name="Duree"></input>
+          <textarea id="TIME" name="Duree"></textarea>
           <p class="alert" id="alertTI" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
         </div>
         <div id="P3">
@@ -53,13 +53,14 @@
             <input  id="res10" name="Ressenti" type="radio" value="10"/>
             <span>10</span></br>
             <div><label class="facu">Info Complementaire :</label></div></br>
-            <textarea type="text" id="MOREINFO" name="Autre Info"></textarea></br>
+            <textarea id="MOREINFO" name="Autre Info"></textarea></br>
           </div></br>
           <p class="alert" id="alertRA" style="visibility : hidden"><b>Question Obligatoire</b></p></br>
         </div>
         <div id="FINAL">
           <h2 id="msgConf">Vous êtes sur le point d'enregistrer votre séance</h2>
           <h2 style="color: red;" id="alertSAVE">Cette action est définitive</h2>
+          <input type="text" name="sheetName" id="SheetName" readonly="readonly" style="display: none; visibility: hidden;"></input>
           <button id="ENVOI" type="submit">💾 Enregistrer</button>
         </div>
       </form>

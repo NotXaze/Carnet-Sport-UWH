@@ -156,8 +156,17 @@ OtherText.addEventListener('input', function(){
     }
 })
 
+var Time=document.getElementById("TIME")
+Time.addEventListener('input', function(){
+    var ValTime=Time.value
+    if (ValTime[ValTime.length-1]=="\n"){
+        Time.value=ValTime.slice(0,ValTime.length-1)
+    }
+})
+
 document.getElementById("ENVOI").addEventListener("click",function(){
     document.getElementById("ENVOI").style.display="none"
+    document.getElementById("grey").style.visibility="hidden"
     document.getElementById("alertSAVE").style.display="none"
     document.getElementById("msgConf").innerHTML="🚧 Enregistrement en cours 🚧 </br> Veuillez patienter </br> Redirection en cours..."
 })
